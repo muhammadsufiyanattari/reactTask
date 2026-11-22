@@ -5,6 +5,7 @@ import viteLogo from "./assets/vite.svg";
 import "./App.css";
 
 function App() {
+  // state hum dom me changing ke lye karte hen agar hum hooks use nahi karen ge to dom me changing nahi ho gi
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount((previousCount) => previousCount + 1);
