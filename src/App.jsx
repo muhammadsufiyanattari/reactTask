@@ -5,6 +5,11 @@ function App() {
   // state hum dom me changing ke lye karte hen agar hum hooks use nahi karen ge to dom me changing nahi ho gi
   const [count, setCount] = useState(0);
   const [showcount, setShowCount] = useState(true);
+  const arryOfObject = [
+    { id: "1001", clientName: "Ahmed", age: "22" },
+    { id: "1002", clientName: "Muzammil", age: "18" },
+    { id: "1003", clientName: "Abuzar", age: "25" },
+  ];
   const increment = () => {
     setCount((previousCount) => previousCount + 1);
   };
@@ -19,53 +24,52 @@ function App() {
 
   return (
     <>
-      {showcount && <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-          alignContent: "center",
-          margin: "100px auto",
-        }}>
-        <h1>{count}</h1>
+      {showcount && (
         <div
-          className="parentBtn"
-          
-          >
-          <button
-            style={{
-              backgroundColor: "yellowgreen",
-              cursor: "pointer",
-              border: "none",
-              padding: "5px 10px",
-              margin: "5px",
-              borderRadius: "10px",
-              color: "white",
-              fontSize: "15px",
-              fontWeight: "bold",
-            }}
-            onClick={increment}>
-            Click Me for Increment
-          </button>
-          <button
-            style={{
-              backgroundColor: "red",
-              cursor: "pointer",
-              border: "none",
-              padding: "5px 10px",
-              margin: "5px",
-              borderRadius: "10px",
-              color: "white",
-              fontSize: "15px",
-              fontWeight: "bold",
-            }}
-            onClick={dicrement}>
-            Click Me for Dicrement
-          </button>
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            alignContent: "center",
+            margin: "100px auto",
+          }}>
+          <h1>{count}</h1>
+          <div className="parentBtn">
+            <button
+              style={{
+                backgroundColor: "yellowgreen",
+                cursor: "pointer",
+                border: "none",
+                padding: "5px 10px",
+                margin: "5px",
+                borderRadius: "10px",
+                color: "white",
+                fontSize: "15px",
+                fontWeight: "bold",
+              }}
+              onClick={increment}>
+              Click Me for Increment
+            </button>
+            <button
+              style={{
+                backgroundColor: "red",
+                cursor: "pointer",
+                border: "none",
+                padding: "5px 10px",
+                margin: "5px",
+                borderRadius: "10px",
+                color: "white",
+                fontSize: "15px",
+                fontWeight: "bold",
+              }}
+              onClick={dicrement}>
+              Click Me for Dicrement
+            </button>
+          </div>
         </div>
-      </div>}
-      <div style={{display:"flex",justifyContent:"center"}}>
+      )}
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <button
           onClick={showHideFucn}
           style={{
@@ -82,6 +86,20 @@ function App() {
           Show & Hide
         </button>
       </div>
+      <ul style={{ display: "flex", listStyle: "none", alignItems:"center",justifyContent:"center",fontWeight:"bold" }}>
+        <li style={{padding:"10px"}}>ID</li>
+        <li style={{padding:"10px"}}>Name</li>
+        <li style={{padding:"10px"}}>Age</li>
+      </ul>
+      {arryOfObject.map((task) => {
+        return (
+          <ul style={{ display: "flex", listStyle: "none", alignItems:"center",justifyContent:"center" }}>
+            <li style={{padding:"10px"}}>{task.id}</li>
+            <li style={{padding:"10px"}}>{task.clientName}</li>
+            <li style={{padding:"10px"}}>{task.age}</li>
+          </ul>
+        );
+      })}
     </>
   );
 }
