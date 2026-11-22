@@ -15,30 +15,55 @@ function App() {
 
   return (
     <>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+          alignContent:"center",
+          margin:"100px auto"
+        }}>
         <h1>{count}</h1>
-        <button 
+        <div
+          className="parentBtn"
           style={{
-            backgroundColor: "yellowgreen",
-            cursor:"pointer",
-            border: "none",
-            padding: "5px 10px",
-            margin: "5px",
-            borderRadius:"10px"
-          }}
-        onClick={increment}>Click Me for Increment</button>
-        <button
-          style={{
-            backgroundColor: "red",
-            cursor:"pointer",
-            border: "none",
-            padding: "5px 10px",
-            margin: "5px",
-            borderRadius:"10px"
-          }}
-          onClick={dicrement}>
-          Click Me for Dicrement
-        </button>
+            // display: "flex",
+            // justifyContent: "center",
+            // flexDirection: "column",
+            // alignItems: "center",
+          }}>
+          <button
+            style={{
+              backgroundColor: "yellowgreen",
+              cursor: "pointer",
+              border: "none",
+              padding: "5px 10px",
+              margin: "5px",
+              borderRadius: "10px",
+              color:"white",
+              fontSize:"15px",
+              fontWeight:"bold"
+            }}
+            onClick={increment}>
+            Click Me for Increment
+          </button>
+          <button
+            style={{
+              backgroundColor: "red",
+              cursor: "pointer",
+              border: "none",
+              padding: "5px 10px",
+              margin: "5px",
+              borderRadius: "10px",
+              color:"white",
+              fontSize:"15px",
+              fontWeight:"bold"
+            }}
+            onClick={dicrement}>
+            Click Me for Dicrement
+          </button>
+        </div>
       </div>
     </>
   );
