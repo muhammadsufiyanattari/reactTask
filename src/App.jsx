@@ -86,6 +86,7 @@ function App() {
           Show & Hide
         </button>
       </div>
+      {/* loop practice */}
       <ul style={{ display: "flex", listStyle: "none", alignItems:"center",justifyContent:"center",fontWeight:"bold" }}>
         <li style={{padding:"10px"}}>ID</li>
         <li style={{padding:"10px"}}>Name</li>
